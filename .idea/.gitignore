@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+target/*
+logs/
+test/
+maven-assembly-plugin/
+
+*.iml
+*.log
+.idea/
+*.zip
+*.jar
+.DS_Store
