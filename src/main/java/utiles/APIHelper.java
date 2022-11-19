@@ -1,8 +1,8 @@
 package utiles;
 
-import modules.initiates.ConsumerDataRequest;
-import modules.initiates.OrderDetailsRequest;
-import modules.initiates.PaymentRequest;
+import modules.initiates.consumer.ConsumerDataRequest;
+import modules.initiates.orderDetails.OrderDetailsRequest;
+import modules.initiates.payment.PaymentRequest;
 
 import java.util.HashMap;
 import java.util.Map;

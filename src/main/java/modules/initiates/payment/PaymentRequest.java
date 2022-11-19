@@ -1,4 +1,6 @@
-package modules.initiates;
+package modules.initiates.payment;
+
+import modules.initiates.InitiateRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,11 +26,11 @@ public class PaymentRequest extends InitiateRequest {
         PlanData.put("FirstInstallmentAmount", firstInstallmentAmount);
     }
 
-    public modules.initiates.CreditCardDetails getCreditCardDetails() {
+    public modules.initiates.payment.CreditCardDetails getCreditCardDetails() {
         return CreditCardDetails;
     }
 
-    public void setCreditCardDetails(modules.initiates.CreditCardDetails creditCardDetails) {
+    public void setCreditCardDetails(modules.initiates.payment.CreditCardDetails creditCardDetails) {
         CreditCardDetails = creditCardDetails;
     }
 

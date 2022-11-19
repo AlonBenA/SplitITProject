@@ -1,5 +1,7 @@
-package modules.initiates;
+package modules.initiates.orderDetails;
 
+
+import modules.initiates.InitiateRequest;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package modules.initiates;
+package modules.initiates.payment;
 
 public class CreditCardDetails {
     String CardCvv;

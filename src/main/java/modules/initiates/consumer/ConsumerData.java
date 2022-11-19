@@ -1,4 +1,4 @@
-package modules.initiates;
+package modules.initiates.consumer;
 
 public class ConsumerData {
 

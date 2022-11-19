@@ -68,8 +68,8 @@ public class Tests {
     public void APITest(@Param(ParameterName.EMAIL) String email,
                         @Param(ParameterName.CARD_NUMBER) String cardNumber,
                         @Param(ParameterName.YEAR) String cardExpYear,
-                        @Param(ParameterName.MOUTH) String cardExpMonth) {
-        int randomAmount = APIHelper.getRandomNumber(1, 1000);
+                        @Param(ParameterName.MOUTH) String cardExpMonth,
+                        @Param(ParameterName.AMOUNT) String amount) {
         String sessionID = token.getAccess_token();
         APIUtils apiUtils = new APIUtils();
 
@@ -80,7 +80,7 @@ public class Tests {
         }
         
         // order details
-        InitiateRequest initiateRequest = APIHelper.createOrderDetailsRequest(sessionID, apiKey, randomAmount);
+        InitiateRequest initiateRequest = APIHelper.createOrderDetailsRequest(sessionID, apiKey, Integer.parseInt(amount));
         apiUtils.createInitiate(initiateRequest);
 
         // payment

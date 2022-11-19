@@ -1,4 +1,4 @@
-package modules.initiates;
+package modules.initiates.orderDetails;
 
 public class Amount {
 

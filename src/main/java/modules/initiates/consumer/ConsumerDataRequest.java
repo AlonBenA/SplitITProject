@@ -1,4 +1,6 @@
-package modules.initiates;
+package modules.initiates.consumer;
+
+import modules.initiates.InitiateRequest;
 
 public class ConsumerDataRequest extends InitiateRequest {
 

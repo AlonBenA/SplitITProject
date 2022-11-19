@@ -15,7 +15,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class AbstractPage {
+public abstract class AbstractPage {
 
     private Logger logger = Logger.getLogger(AbstractPage.class.getName());
 
