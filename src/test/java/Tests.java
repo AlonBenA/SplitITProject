@@ -1,8 +1,13 @@
 import com.google.gson.Gson;
+import infra.datadrive.CsvDataProvider;
+import infra.datadrive.DataProviderSource;
+import infra.testng.Param;
+import infra.testng.ParameterName;
 import modules.initiates.InitiateRequest;
 import modules.policies.PoliciesRequest;
 import modules.policies.PoliciesResponse;
 import modules.Token;
+import org.apache.commons.lang3.StringUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -22,9 +27,12 @@ public class Tests {
 
     private Token token;
 
+    private String apiKey;
+
     @BeforeClass
     public void beforeClass() {
         gson = new Gson();
+        apiKey = "";
     }
 
     @AfterTest
@@ -55,20 +63,22 @@ public class Tests {
         merchantChosePage.quitDriver();
     }
 
-    @Test(priority = 2)
-    public void APITest() {
-        String cardNumber = "4111111111111111";
-        String cardExpYear = "24";
-        String cardExpMonth = "02";
-        String email = "qa@mail.com";
+    @Test(priority = 2, testName= "APITest", dataProvider = "dp", dataProviderClass = CsvDataProvider.class)
+    @DataProviderSource(name = "APITest")
+    public void APITest(@Param(ParameterName.EMAIL) String email,
+                        @Param(ParameterName.CARD_NUMBER) String cardNumber,
+                        @Param(ParameterName.YEAR) String cardExpYear,
+                        @Param(ParameterName.MOUTH) String cardExpMonth) {
         int randomAmount = APIHelper.getRandomNumber(1, 1000);
         String sessionID = token.getAccess_token();
         APIUtils apiUtils = new APIUtils();
 
-        PoliciesRequest policiesRequest = new PoliciesRequest(sessionID);
-        PoliciesResponse policiesResponse = apiUtils.createPoliciesResponse(policiesRequest);
-        String apiKey = policiesResponse.getTerminals().get(0).getApiKey();
-
+        if(StringUtils.isEmpty(apiKey)){
+            PoliciesRequest policiesRequest = new PoliciesRequest(sessionID);
+            PoliciesResponse policiesResponse = apiUtils.createPoliciesResponse(policiesRequest);
+            apiKey = policiesResponse.getTerminals().get(0).getApiKey();
+        }
+        
         // order details
         InitiateRequest initiateRequest = APIHelper.createOrderDetailsRequest(sessionID, apiKey, randomAmount);
         apiUtils.createInitiate(initiateRequest);
