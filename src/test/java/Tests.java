@@ -1,8 +1,8 @@
 import com.google.gson.Gson;
-import infra.datadrive.CsvDataProvider;
-import infra.datadrive.DataProviderSource;
-import infra.testng.Param;
-import infra.testng.ParameterName;
+import dataProvider.datadrive.CsvDataProvider;
+import dataProvider.datadrive.DataProviderSource;
+import dataProvider.testng.Param;
+import dataProvider.testng.ParameterName;
 import modules.initiates.InitiateRequest;
 import modules.policies.PoliciesRequest;
 import modules.policies.PoliciesResponse;

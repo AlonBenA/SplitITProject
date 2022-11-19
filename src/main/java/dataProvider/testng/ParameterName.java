@@ -1,4 +1,4 @@
-package infra.testng;
+package dataProvider.testng;
 
 public class ParameterName {
     public final static String EMAIL = "Email";

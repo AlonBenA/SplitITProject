@@ -1,4 +1,4 @@
-package infra.datadrive;
+package dataProvider.datadrive;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

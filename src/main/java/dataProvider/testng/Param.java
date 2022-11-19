@@ -1,4 +1,4 @@
-package infra.testng;
+package dataProvider.testng;
 
 import static java.lang.annotation.ElementType.PARAMETER;
 

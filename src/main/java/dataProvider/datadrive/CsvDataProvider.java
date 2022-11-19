@@ -1,4 +1,4 @@
-package infra.datadrive;
+package dataProvider.datadrive;
 
 import static utiles.ResourceUtils.getResourceAsString;
 
