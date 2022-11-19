@@ -1,6 +1,6 @@
 package infra.datadrive;
 
-import static infra.utils.ResourceUtils.getResourceAsString;
+import static utiles.ResourceUtils.getResourceAsString;
 
 import java.io.IOException;
 import java.io.StringReader;
